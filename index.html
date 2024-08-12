@@ -284,7 +284,9 @@ code {
             <p>For the first query, we performed tfidf for each page. We calculated the results using a script during the crawler's run. Code for the script can be seen here: <a href="https://github.com/SharonMor/Query-Kings---A/blob/main/HW2/HW2.js">https://github.com/SharonMor/Query-Kings---A/blob/main/HW2/HW2.js</a></p>
             <img src="images/tfidf.jpeg" alt="image of tfidf" class="project-image">
             <p>Rank 1: <a href="https://www.espn.com/tennis/story?id=40581041&_slug_=ranking-top-10-women-tennis-players-21st-century" target="_blank"> https://www.espn.com/tennis/story?id=40581041&_slug_=ranking-top-10-women-tennis-players-21st-century</a></p>
-            <p>Important note: In this query there were 2 words that appeared in all pages due to a common word (top) and a word that appeared in the menu, which appeared in each of the pages (tennis). As a result, we received that all the results that came back were 0 due to the calculation of the idf of the page:</p>
+            <img src="images/tfidf2.jpeg" alt="tfidf3" class="project-image">
+
+            <p>Important note: In this query there were 3 words that appeared in all pages due to a common case (top, men) and a word that appeared in the menu, which appeared in each of the pages (tennis). As a result, we received that all the results that came back were 0 due to the calculation of the idf of the page:</p>
             <p>Math.log((documents.length + 1) / (documentsWithWord + 1)) = Math.log(1) = 0</p>
             <p>That is, TF * 0 = 0.</p>
             <p>We didn't want all the results to be zeroed and we couldn't derive information from this, so we added 1 to each IDF result in order to give expression to the TF calculation of the QUERY word and thus derive a certain direction for each word in any case. We found the idea of adding the one in stackoverflow:</p>
